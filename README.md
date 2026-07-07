@@ -45,3 +45,14 @@ Access control is strictly applied at the **Resource Group scope** rather than t
 * **Cloud Operations Team:** Assigned the **Owner** role over the Development Resource Group and the **Contributor** role over the Production Resource Group.
 * **Application Development Team:** Assigned the **Contributor** role over the Development Resource Group (allowing full resource creation/deletion for testing) and the **Reader** role over Production (allowing troubleshooting visibility without modification risks).
 * **Finance Auditing Group:** Assigned the **Reader** role across all scopes to extract billing telemetry without operational interference.
+## 🚀 Automated Deployment Integration (IaC First)
+To enforce immutable infrastructure design, this project prioritizes programmatic configuration over manual portal modifications. 
+
+The environment infrastructure, tagging structures, and baseline security footprints are fully codified within `deploy.sh`. 
+
+### Local Execution Instructions
+To provision this governance topology automatically inside a target subscription, execute the following commands via the Azure CLI:
+
+```bash
+chmod +x deploy.sh
+./deploy.sh
